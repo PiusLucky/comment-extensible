@@ -1,9 +1,10 @@
-
 <div align="center">
   <img src="https://github.com/user-attachments/assets/2c78eac6-924d-4d6a-9236-5eae486b7763" alt="comment-extensible">
   <br><br>
 </div>
 
+> [!WARNING] ⚠️⚠️⚠️
+> Highly experimental - No suitable for a PRODUCTION environment yet. You can just clone the repository and set it up locally.
 
 # Nextjs Comment Extensible
 
