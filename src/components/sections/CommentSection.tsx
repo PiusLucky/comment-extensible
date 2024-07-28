@@ -4,8 +4,8 @@ import { Comment, CommentRepository } from "@/data/CommentRepository";
 import React, { useEffect, useState } from "react";
 
 import CommentCard from "../cards/CommentCard";
-import AddCommentSection from "./AddCommentSection";
 import CommentSkeleton from "../skeletons/CommentSkeleton";
+import AddCommentSection from "./AddCommentSection";
 
 interface CommentSectionProps {
   commentRepository: CommentRepository;
@@ -17,7 +17,6 @@ const CommentSection: React.FC<CommentSectionProps> = ({
   const [isMounted, setIsMounted] = useState(false);
   const [comments, setComments] = useState<Comment[]>([]);
   const [refreshKey, setRefreshKey] = useState(0);
-  const [commentsLoading, setCommentLoading] = useState(false);
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -48,15 +47,16 @@ const CommentSection: React.FC<CommentSectionProps> = ({
           <CommentSkeleton count={6} />
         </div>
       )}
-      {isMounted && comments!.map((comment) => (
-        <div className="grid gap-6" key={comment?.id?.toString()}>
-          <CommentCard
-            comment={comment}
-            commentRepository={commentRepository}
-            setRefreshKey={setRefreshKey}
-          />
-        </div>
-      ))}
+      {isMounted &&
+        comments!.map((comment) => (
+          <div className="grid gap-6" key={comment?.id?.toString()}>
+            <CommentCard
+              comment={comment}
+              commentRepository={commentRepository}
+              setRefreshKey={setRefreshKey}
+            />
+          </div>
+        ))}
     </div>
   );
 };
