@@ -2,8 +2,8 @@ import {
   COMMENT_DOES_NOT_EXIST,
   ONE_REPLY_LEVEL_ALLOWED,
 } from "@/lib/constant";
-import { CommentRepository, Comment } from "./CommentRepository";
 import { Pool } from "pg";
+import { Comment, CommentRepository } from "./CommentRepository";
 
 export class PostgresCommentRepository implements CommentRepository {
   private pool: Pool;
@@ -24,7 +24,7 @@ export class PostgresCommentRepository implements CommentRepository {
     }
     const result = await this.pool.query(
       "INSERT INTO comments (content, author, parent_id, timestamp) VALUES ($1, $2, $3, $4) RETURNING *",
-      [comment.content, comment.author, comment.parentId, comment.timestamp]
+      [comment.content, comment.author, comment.parentId]
     );
     return result.rows[0];
   }
@@ -40,6 +40,20 @@ export class PostgresCommentRepository implements CommentRepository {
     } catch (err) {
       throw new Error(COMMENT_DOES_NOT_EXIST);
     }
+  }
+
+  async getCommentReplies(parentId?: string): Promise<Comment[]> {
+    // TODO: TBI <placeholder>
+    const result = await this.pool.query(
+      "SELECT * FROM comments WHERE parent_id = $1 OR parent_id IS NULL",
+      [parentId || null]
+    );
+    return result.rows;
+  }
+
+  async getCommentRepliesCount(parentId?: string): Promise<number> {
+    // TODO: TBI
+    return 0;
   }
 
   async updateComment(id: string, content: string): Promise<Comment> {
