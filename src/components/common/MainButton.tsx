@@ -1,5 +1,5 @@
-import { forwardRef, ReactElement } from "react";
 import { Loader2 } from "lucide-react";
+import { forwardRef, ReactElement } from "react";
 import { Button } from "../ui/button";
 
 type MainButtonProps = {
@@ -30,7 +30,7 @@ const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
       disabled = false,
       isSubmitable,
       width,
-      dataLoadingText = "Please wait ...",
+      dataLoadingText = "Wait..",
       variant = "primary",
       classes,
       iconRoute,
@@ -42,15 +42,15 @@ const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
     ref
   ) => {
     const propWidth =
-      width === "full_width" ? "w-full" : width ? width : "w-[245px]";
+      width === "full_width" ? "w-full" : width ? width : "w-[90px]";
 
     const isSecondaryVariant = variant !== "primary";
 
     const size_height =
       size === "normal"
-        ? "h-[3.1215rem]"
+        ? "h-[2.1215rem]"
         : size === "large"
-        ? "h-[3.75rem]"
+        ? "h-[2.75rem]"
         : "h-[2.625rem]";
 
     const variant_hover =
@@ -61,7 +61,7 @@ const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
         form={form}
         className={`${
           isSecondaryVariant ? " text-white  bg-secondary" : "bg-primary"
-        } text-white shadow-xl ${propWidth} md:${propWidth}  select-none rounded-[0.625rem] hover:opacity-90 ${variant_hover} ${size_height} ${classes}`}
+        } text-white shadow-none ${propWidth} md:${propWidth}  select-none rounded-[0.625rem] hover:opacity-90 ${variant_hover} ${size_height} ${classes}`}
         onClick={!disabled ? action : () => undefined}
         type={isSubmitable ? "submit" : "button"}
         ref={ref}

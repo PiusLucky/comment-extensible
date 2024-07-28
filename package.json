@@ -1,5 +1,6 @@
 {
-  "name": "project-name",
+  "name": "comment-extensible",
+  "description": "A React.js package for handling comments, supporting one level of replies and being database agnostic.",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,20 +10,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "lucide-react": "^0.300.0",
-    "next": "14.0.4",
+    "mongodb": "^6.8.0",
+    "next": "^14.2.5",
+    "pg": "^8.12.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-timeago": "^7.2.0",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/pg": "^8.11.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-timeago": "^4.1.7",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
