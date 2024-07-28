@@ -5,7 +5,7 @@
 </div>
 
 > [!WARNING]  ⚠️⚠️⚠️ 
-> Highly experimental - No suitable for a PRODUCTION environment yet
+> Highly experimental - No suitable for a PRODUCTION environment yet for now just clone the repository and set it up locally.
 
 
 # Nextjs Comment Extensible
