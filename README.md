@@ -1,3 +1,10 @@
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2c78eac6-924d-4d6a-9236-5eae486b7763" alt="comment-extensible">
+  <br><br>
+</div>
+
+
 # Nextjs Comment Extensible
 
 This ReactJS package provides a comments component with one level deep replies. It is designed to be database agnostic, supporting MongoDB and PostgreSQL and more...
