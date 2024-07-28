@@ -1,7 +1,7 @@
 {
   "name": "comment-extensible",
   "description": "A React.js package for handling comments, supporting one level of replies and being database agnostic.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "dist/index.js",
   "keywords": [
